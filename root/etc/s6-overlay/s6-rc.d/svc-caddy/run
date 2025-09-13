@@ -1,0 +1,2 @@
+#!/usr/bin/with-contenv sh
+exec caddy run --config /config/caddy/Caddyfile

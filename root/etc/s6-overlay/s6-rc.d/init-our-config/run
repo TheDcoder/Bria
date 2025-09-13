@@ -1,0 +1,22 @@
+#!/usr/bin/with-contenv bash
+# shellcheck shell=bash
+
+# create our folders
+mkdir -p \
+    /config/aria2 \
+    /config/caddy \
+    /downloads
+
+# default config files
+cp -n \
+    /defaults/aria2.cfg \
+    /config/aria2/aria2.cfg
+cp -n \
+    /defaults/Caddyfile \
+    /config/caddy/Caddyfile
+
+# permissions
+lsiown -R abc:abc \
+    /config
+lsiown abc:abc \
+    /downloads

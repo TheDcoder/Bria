@@ -1,0 +1,16 @@
+:80
+
+@api path /jsonrpc /rpc
+reverse_proxy @api 127.0.0.1:6800
+
+@dl path /dl /dl/*
+handle @dl {
+	uri strip_prefix /dl
+	file_server browse {
+		root /downloads
+	}
+}
+
+file_server browse {
+	root /var/html/www
+}
