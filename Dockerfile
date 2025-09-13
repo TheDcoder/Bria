@@ -14,10 +14,9 @@ RUN \
 
 RUN \
     wget -O /tmp/webui-aria2.zip "https://github.com/ziahamza/webui-aria2/archive/refs/heads/master.zip" && \
-    mkdir -p /var/html/www/webui-aria2 && \
-    unzip -o /tmp/webui-aria2.zip -d /var/html/www/webui-aria2 && \
-    mv /var/html/www/webui-aria2/webui-aria2-master/* /var/html/www/webui-aria2/ && \
-    rm -rf /tmp/webui-aria2.zip
+    unzip -o /tmp/webui-aria2.zip -d /tmp && \
+    mv /tmp/webui-aria2-master/docs /var/html/www/webui-aria2 && \
+    rm -rf /tmp/webui-aria2-master /tmp/webui-aria2.zip
 
 COPY root/ /
 
